@@ -10,7 +10,7 @@ int main(int argc, char **argv){
 	ros::NodeHandle nh;
 
 	ros::Publisher switch_pub = nh.advertise<std_msgs::Bool>("switch_state",100);
-	ros::Rate loop_rate(10);
+	ros::Rate loop_rate(100);
 
 	int pi = pigpio_start(0, 0);
 	set_pull_up_down(pi, pin, PI_PUD_DOWN);
